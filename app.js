@@ -40,6 +40,12 @@
   }
   function igHandle() { return String(C.instagram || "").replace(/^@/, ""); }
   function igHref() { return "https://www.instagram.com/" + encodeURIComponent(igHandle()) + "/"; }
+  function fbHref() {
+    var f = String(C.facebook || "").trim();
+    if (!f) return "";
+    if (/^https?:\/\//i.test(f)) return f;
+    return "https://www.facebook.com/" + f.replace(/^(www\.)?facebook\.com\//i, "").replace(/^\/+/, "");
+  }
   function webHref() {
     var w = String(C.website || "").trim();
     if (!w) return "";
@@ -177,6 +183,7 @@
     if (C.phone) html += row("Phone", C.phone, telHref());
     if (C.email) html += row("Email", C.email, mailHref());
     if (C.instagram) html += row("Instagram", "@" + igHandle(), igHref(), true);
+    if (fbHref()) html += row("Facebook", prettyUrl(fbHref()).replace(/^www\./, ""), fbHref(), true);
     var w = webHref();
     if (w) html += row("Website", prettyUrl(w), w, true);
     else if (C.websitePlaceholder) html += row("Website", C.websitePlaceholder, null, false, null, true);
@@ -264,6 +271,11 @@
       L.push("X-SOCIALPROFILE;TYPE=instagram:" + igHref());
       L.push("item1.URL:" + igHref());
       L.push("item1.X-ABLabel:Instagram");
+    }
+    if (fbHref()) {
+      L.push("X-SOCIALPROFILE;TYPE=facebook:" + fbHref());
+      L.push("item2.URL:" + fbHref());
+      L.push("item2.X-ABLabel:Facebook");
     }
     L.push("NOTE:" + vEsc(note));
     if (logoDataUrl) {
@@ -363,6 +375,7 @@
       ["Contact"],
       ["phone", "Phone"], ["email", "Email"], ["emailSubject", "Email subject"],
       ["instagram", "Instagram handle (no @)"],
+      ["facebook", "Facebook page (name or full link)"],
       ["website", "Website (leave blank until live)"], ["websitePlaceholder", "Website placeholder text"],
       ["cardUrl", "Card address for QR (blank = automatic)"],
       ["Introduction"],
