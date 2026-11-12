@@ -33,6 +33,7 @@ window.CARD = {
   email: "CoastalPeakSC@gmail.com",
   emailSubject: "HVAC Service Inquiry",
   instagram: "CoastalPeaksc",          // without the @
+  facebook: "coastalpeaksc",           // page name after facebook.com/ (or the full link); "" to hide
 
   /* ---------- Website ----------
      Leave website empty "" while under construction.
