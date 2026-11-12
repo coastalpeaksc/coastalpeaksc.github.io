@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Coastal Peak Elite Services — Premium HVAC, Charleston SC</title>
+  <meta name="description" content="Coastal Peak Elite Services, LLC — premium HVAC installation, repair, maintenance and new construction HVAC in Charleston, South Carolina and surrounding areas.">
+  <meta name="theme-color" content="#0D1B2A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Coastal Peak">
+
+  <!-- Link previews (iMessage, WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coastal Peak Elite Services">
+  <meta property="og:description" content="Premium HVAC Services for Elite Comfort. Charleston, South Carolina.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- FRONT OF CARD -->
+    <header class="hero" id="front">
+      <div class="hero__frame" aria-hidden="true"></div>
+      <div class="hero__top"><span data-bind="industryShort">HVAC</span><span data-bind="state">SC</span></div>
+
+      <div class="hero__body">
+        <div class="logo" id="logo"></div>
+        <h1 class="name" id="name">
+          <span data-bind="companyName"></span>
+          <span class="name__suffix" data-bind="companySuffix"></span>
+        </h1>
+        <hr class="rule">
+        <p class="tagline" data-bind="tagline"></p>
+        <p class="meta"><span data-bind="metaLead"></span> &middot; <span data-bind="location"></span></p>
+      </div>
+
+      <div class="actions" id="heroActions"></div>
+    </header>
+
+    <!-- BACK OF CARD -->
+    <main class="content">
+      <div class="content__inner">
+
+        <section class="section" id="contact" aria-labelledby="contactTitle">
+          <p class="eyebrow">Contact</p>
+          <h2 class="h2" id="contactTitle">Let&rsquo;s talk comfort.</h2>
+          <ul class="rows" id="contactRows"></ul>
+          <div class="save-row" id="saveRow"></div>
+        </section>
+
+        <section class="section" id="about" aria-labelledby="aboutTitle">
+          <p class="eyebrow">The Company</p>
+          <h2 class="h2" id="aboutTitle" data-bind="aboutTitle"></h2>
+          <p class="lead" data-bind="about"></p>
+          <ul class="clients" id="clients" aria-label="Who we serve"></ul>
+        </section>
+
+        <section class="section" id="services" aria-labelledby="servicesTitle">
+          <p class="eyebrow">Services</p>
+          <h2 class="h2" id="servicesTitle">What we do.</h2>
+          <ol class="services" id="serviceList"></ol>
+        </section>
+
+        <section class="section" id="area" aria-labelledby="areaTitle">
+          <p class="eyebrow">Service Area</p>
+          <h2 class="h2" id="areaTitle" data-bind="serviceAreaIntro"></h2>
+          <ul class="areas" id="areaList"></ul>
+          <p class="area-note" data-bind="serviceAreaNote"></p>
+        </section>
+
+        <section class="section" id="share" aria-labelledby="shareTitle">
+          <p class="eyebrow">Share</p>
+          <div class="share">
+            <div class="qr" id="qr" role="img" aria-label="QR code linking to this digital business card"></div>
+            <div>
+              <h2 class="share__title" id="shareTitle">Scan to save this card.</h2>
+              <p class="share__text">Point a phone camera at the code, or send the link directly.</p>
+              <div class="actions" id="shareActions"></div>
+              <p class="share__url" id="shareUrl"></p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span>&copy; <span id="year"></span> <span data-bind="legalName"></span></span>
+          <span data-bind="location"></span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- Mobile quick-action bar (appears after scrolling past the front) -->
+  <nav class="quickbar" id="quickbar" aria-label="Quick actions"></nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="assets/qrcode.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
