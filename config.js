@@ -38,7 +38,7 @@ window.CARD = {
   /* ---------- Website ----------
      Leave website empty "" while under construction.
      When it's live, paste the full address, e.g. "https://coastalpeaksc.com" */
-  website: "",
+  website: "https://coastalpeakeliteservices.com",
   websitePlaceholder: "Coming soon",   // shown while website is empty ("" to hide the row)
 
   /* ---------- Card address (for the QR code) ----------
